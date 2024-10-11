@@ -25,6 +25,13 @@ connection.once('open', () => {
 const episodesRouter = require('./routes/episodes');
 app.use('/api/episodes', episodesRouter);
 
+
+
+// Add a catch-all route for the root path
+app.get('/', (req, res) => {
+  res.send('HRTalksDZ API is running');
+});
+
 app.listen(5000, () => {
   console.log(`Server is running on port: ${5000}`);
 });
