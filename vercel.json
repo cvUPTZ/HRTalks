@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/api/(.*)", "destination": "/hrtalksdz-backend/server.js" },
+      { "source": "/(.*)", "destination": "/frontend/$1" }
+    ]
+  }
