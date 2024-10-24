@@ -1,6 +1,11 @@
 {
-    "rewrites": [
-      { "source": "/api/(.*)", "destination": "/hrtalksdz-backend/server.js" },
-      { "source": "/(.*)", "destination": "/frontend/src/index.js" }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    { "src": "frontend/package.json", "use": "@vercel/static-build" },
+    { "src": "hrtalksdz-backend/server.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "hrtalksdz-backend/server.js" },
+    { "src": "/(.*)", "dest": "frontend/build/$1" }
+  ]
+}
